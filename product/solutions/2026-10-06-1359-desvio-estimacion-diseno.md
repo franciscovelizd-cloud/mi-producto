@@ -52,6 +52,8 @@ Elegida: **A4, problema listo antes de diseñar**. La eligió Pancho, siguiendo 
 
 Durante la exploración, Pancho sacó A2 y A3 por ser reactivas o depender de herramientas actuales, y después las repuso. Quedan en espera con su razón.
 
+T1 cerrado inconclusive (2026-10-18), ver [tests](../tests/2026-10-17-1210-desvio-estimacion-diseno.md): la creencia más riesgosa de A4 sigue sin probar.
+
 ## Propuesta de valor: problema-listo-para-diseno
 Escrita para Camila Rojas (primaria); el efecto también llega a Felipe Soto (terciaria).
 - **Dolor que alivia:** rehacer el diseño cuando cambian reglas o requisitos con el trabajo avanzado. Ejemplos: «Legal pidió cambios cuando ya tenía el 70% diseñado… estimamos 2 semanas y fueron casi 4» (R001); «Negocio cambió la regla de copago dos veces mientras se diseñaba» (R009); Camila pierde 2 a 3 días por iniciativa discutiendo supuestos sin validar. Todo `synthetic`.

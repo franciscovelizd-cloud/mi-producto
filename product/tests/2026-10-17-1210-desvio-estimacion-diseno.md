@@ -10,7 +10,7 @@ status: designed
 Se testea A4 `problema-listo-para-diseno`, la alternativa elegida. El dolor que ataca, los cambios de requisitos con el diseño ya iniciado, tiene evidencia preliminar (`secondary` y `synthetic`). Que un criterio de entrada lo alivie no tiene evidencia: nadie ha reaccionado al criterio y ninguna PO real lo ha visto. Hay dos preguntas que pueden descartar A4 antes de construir nada: si el criterio habría detectado esos cambios (T1) y si las PO lo adoptarían (T2).
 
 ## T1. problema-listo-para-diseno: revisión retrospectiva de 10 iniciativas
-- **Test status:** ready
+- **Test status:** analyzed
 - **Belief under test:** "[feature: problema-listo-para-diseno] [value] De las últimas 10 iniciativas con desvío de diseño, al menos el 60% de los cambios de requisitos ocurridos con el diseño iniciado se habría detectado con un criterio de entrada (reglas de negocio, legal o compliance, alcance validados)."
 - **Risk:** [value]. Está registrada así, pero la señal es una tasa de detección y no una conducta: el test pregunta si el criterio habría detectado los cambios.
 - **Test type:** technical-test (retrospectivo, con clave de respuesta: la clave son los cambios que de verdad ocurrieron)
@@ -72,4 +72,20 @@ Se testea A4 `problema-listo-para-diseno`, la alternativa elegida. El dolor que 
 
 ## Results
 
+### T1 · cerrado anticipadamente (2026-10-18)
+- **Observado:** 2 entrevistas sobre 1 iniciativa, "Creación de cuenta con pasaporte" (la PO y el diseñador). 1 cambio (C001). Sin clasificación por separado ni segundo clasificador.
+- **Con quién y cuántos:** 1 de 10 iniciativas; 2 de hasta 20 entrevistas. El diseño pedía al menos 6 iniciativas con cambios documentados, al menos 10 cambios y un acuerdo inicial de 70% o más.
+- **Provenance:** real (la PO y el diseñador de la iniciativa).
+- **Por qué se cerró:** decisión de Pancho por temas de proceso (ver `product/corrections.md`, 2026-10-18).
+- **Hechos:** inicio del diseño 24-08-2026 (según la PO; sin ticket de diseño). Desvío de alrededor de 67% (planificado: casillero fijo de 3 semanas en el roadmap; real: unas 5 semanas; fuente: entrevistas). Alcance entregado de palabra, sin registro. C001: el proveedor de verificación define toda su parte del flujo y no permite intervenirla. Lo encontró el desarrollador en las pruebas técnicas, después del refinamiento (historia de usuario en Jira, alrededor del 21-09, sin acceso). Se eliminaron las pantallas de instrucciones de verificación; unas 2 semanas de retrabajo. Quién lo pidió: no se sabe.
+- **Lectura del único caso (no es la señal del test):** si C001 es "Ninguno", 0 de 1 detectable; si es ítem 3, 1 de 1. Con la hoja escrita, se parece más al ejemplo "Tech avisa…". No se clasificó.
+- **Result:** `inconclusive`. No se cumple ninguna condición de validez.
+- **Lo que deja (real, un solo caso, no generalizable):** (1) el cambio vino de la factibilidad técnica de un proveedor, una categoría que el criterio no cubre; (2) el alcance se entregó sin registro, como A4 supone; (3) diseño no se estima por iniciativa (creencia 5; afecta la métrica del sponsor); (4) según la PO, el diseñador amplía el alcance por su cuenta (causa no registrada).
+- **Decision:** ninguna sobre A4. Por la regla, un `inconclusive` se vuelve a correr o se rediseña.
+
+### T2 · `not run`
+Dependía de que T1 pasara.
+
 ## Decision
+- A4 `problema-listo-para-diseno`: sin decisión. Sigue `chosen`, con su creencia más riesgosa (8) sin probar. No está lista para spec.
+- Camino pendiente de elegir: (1) retomar T1 tal como está cuando el proceso lo permita; (2) rediseñar un T1 más chico, con umbral y condiciones escritos antes de correrlo; (3) si la validación técnica tardía se repite, testear una versión del criterio con un ítem de factibilidad técnica, con su propio test.
